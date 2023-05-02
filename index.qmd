@@ -5,21 +5,22 @@ description: "An outline and list of materials for the nbdev tutorial"
 
 ## Resources For This Tutorial
 
-- The [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing).
+- The [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing) for this talk.
 - The [GitHub repo](https://github.com/fastai/jupytercon-2023) with all of the examples and the source code for this site.
 
-## Pre-requisites
+## Pre-requisites (5 minutes)
 
-1. Install [Quarto](https://quarto.org/docs/get-started/)
+1. Install [Quarto](https://quarto.org/docs/get-started/).
 2. Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
 3. Install [nbdev](https://nbdev.fast.ai/) with `pip install nbdev`.
 4. Install the [nbdev VSCode extension](https://marketplace.visualstudio.com/items?itemName=hamelhusain.nbdev) [^1].
+5. Optionally, install the [github cli](https://cli.github.com/).
 
-## 1. Intro (30 minutes)
+## 1. Intro (20 minutes)
 
-Motivation for nbdev -- literate & exploratory programming.  [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing)
+Motivation for nbdev -- literate & exploratory programming ([slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing)).
 
-## 2. Quarto Walkthrough (30 minutes)
+## 2. Quarto Walkthrough (40 minutes)
 
 - Confirm pre-requisites
 - Create a new project using `quarto project create`, see the [_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
@@ -41,6 +42,7 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
             - `code-fold: true`
             - `code-tools: true`
         - Other [important cell options](https://quarto.org/docs/reference/cells/cells-jupyter.html#overview)
+        - General [HTML options](https://quarto.org/docs/output-formats/html-basics.html)
     - Hotkeys: 
         - `CMD + SHIFT + O`; outline navigator
         - `CMD  + T`; see tags (project wide)
@@ -57,18 +59,38 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
     - [annotation.qmd](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/annotation.qmd)
         - You can make multi-line by commenting twice
     - Conditional formatting
-        - Show:  code ~/github/nbdev/nbs/getting_started.ipynb
+        - Show locally in VSCode: [nbdev/nbs/getting_started.ipynb](https://github.com/fastai/nbdev/blob/master/nbs/getting_started.ipynb).
         - Notice special cell tags that let you know when something is visible
     - Testing your docs by executing code:
         - Set `execute: enabled: true` in _quarto.yml or pass the`—execute` flag to quarto
         - Use the `execution: freeze: true` if you need to opt a notebook out of execution. [reference](https://quarto.org/docs/computations/caching.html#disabling-execution).
         - The Jupyter cache can be helpful while developing: [reference](https://quarto.org/docs/computations/caching.html#jupyter-cache).
-    - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16). 
-
-
-
+    - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16) | [docs](https://quarto.org/docs/websites/website-listings-custom.html#metadata-file-listings). 
+    - Notes/TILs:
+        - [Hamel's notes](https://hamel.dev/notes/)
+        - [Wasim's TILs](https://wasimlorgat.com/tils/)
+    - Notebook filters:
+        - [example](https://github.com/hamelsmu/hamel/blob/master/quarto_filter.py) | [docs](https://quarto.org/docs/extensions/nbfilter.html)
+- Publishing & Previewing
+    - `quarto publish`
+    - `quarto render` followed by `netlify`
+    - Official [Quarto GitHub Actions](https://github.com/quarto-dev/quarto-actions).
+        - [example](./gha.qmd)
+- Configuration: `_quarto.yml`, front matter etc
+    - Global options: `_quarto.yml`: [docs](https://quarto.org/docs/websites/index.html#config-file)
+    - Page front matter: [docs](https://quarto.org/docs/output-formats/html-basics.html)
+    - Overriding global options per directory: [docs](https://quarto.org/docs/projects/quarto-projects.html#directory-metadata)
+    - Repeatable options: [listing_meta](https://github.com/hamelsmu/hamel/blob/master/notes/_listing_meta.yml) and merging that with `metadata-files` [front matter]](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)
+- Shiny Live
+    - TODO: add example
+- Where to get help:
+    - The quarto website repo: https://github.com/quarto-dev/quarto-web
+    - Example Gallery: https://quarto.org/docs/gallery/
 
 [^1]: This will automatically install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extensions as well.
+
+## 3. nbdev Walkthrough (60 minutes)
+
 
 
 ## Additional Reading

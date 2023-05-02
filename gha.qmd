@@ -1,0 +1,52 @@
+---
+title: Example GitHub Action
+description: Example GitHub Action that deploys Quarto
+---
+
+```{.yaml filename=".gitub/workflows/publish.yml"}
+on:
+  workflow_dispatch:         # <1>
+  pull_request:              # <1>
+  push:                      # <1>
+    branches: release-prod   # <1>
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v4              # <2>
+        with:                                      # <2>
+          python-version: '3.10'                   # <2>
+          
+      - name: install nbformat for ipynb filter    # <2>
+        run: pip install nbformat==5.7.3           # <2>
+        
+      - name: Check out repository                 # <3>
+        uses: actions/checkout@v3                  # <3>
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.2.475" # <4>
+
+      - name: Render                                # <5>
+        uses: quarto-dev/quarto-actions/render@v2   # <5>
+        with:                                       # <5>
+          to: html                                  # <5>
+
+      - name: Deploy to GitHub Pages                  # <6>
+        if: github.event_name != 'pull_request' # <6>
+        uses: peaceiris/actions-gh-pages@v3 # <6>
+        with: # <6>
+          github_token: ${{ secrets.GITHUB_TOKEN }} # <6>
+          publish_dir: ./_site # <6>
+          cname: yoursite.com # <6>
+```
+1. Trigger the action on push, pull request, or manually
+2. Set up Python and install nbformat
+3. Check out the repository
+4. Pin the version of Quarto to use
+5. Render the site
+6. Publish the site to GitHub Pages

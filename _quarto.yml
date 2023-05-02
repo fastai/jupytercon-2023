@@ -3,14 +3,20 @@ project:
 
 website:
   title: "nbdev Tutorial: JupyterCon 2023"
+  description: "A nbdev + Quarto tutorial for JupyterCon 2023."
   image: nbdev.png
+  open-graph: true
+  repo-url: https://github.com/fastai/jupytercon-2023
+  repo-actions: [edit]
+  repo-branch: main
+  site-url: "https://fastai.github.io/jupytercon-2023/"
   navbar:
     left:
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
 
