@@ -1,6 +1,7 @@
 ---
 title: "nbdev Tutorial"
 description: "An outline and list of materials for the nbdev tutorial"
+image: nbdev.png
 ---
 
 ## Resources For This Tutorial
