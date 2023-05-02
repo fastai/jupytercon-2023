@@ -82,10 +82,10 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
     - Overriding global options per directory: [docs](https://quarto.org/docs/projects/quarto-projects.html#directory-metadata)
     - Repeatable options: [listing_meta](https://github.com/hamelsmu/hamel/blob/master/notes/_listing_meta.yml) and merging that with `metadata-files` [front matter]](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)
 - Shiny Live
-    - TODO: add example
+    - TODO: add example.
 - Where to get help:
-    - The quarto website repo: https://github.com/quarto-dev/quarto-web
-    - Example Gallery: https://quarto.org/docs/gallery/
+    - The quarto website [repo](https://github.com/quarto-dev/quarto-web).
+    - Example [gallery](https://quarto.org/docs/gallery/).
 
 [^1]: This will automatically install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extensions as well.
 
