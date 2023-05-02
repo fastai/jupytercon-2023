@@ -1,0 +1,45 @@
+---
+title: "Palmer Penguins"
+author: Norah Jones
+date: 'March 12, 2023'
+format:
+  html: 
+    code-tools: true
+    code-fold: true
+execute:
+  cache: true
+jupyter: python3
+---
+
+# Palmer Penguins
+
+## Here is a table
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+```{python}
+#| echo: false
+import pandas as pd
+df = pd.read_csv("palmer-penguins.csv") 
+df = df[["species", "island", "year", "bill_length_mm", "bill_depth_mm"]]
+
+import time
+time.sleep(3)
+```
+
+## Exploring the Data
+
+See @fig-bill-sizes for an exploration of bill sizes by species.
+
+```{python}
+#| label: fig-bill-sizes
+#| fig-cap: Bill Sizes by Species
+import matplotlib.pyplot as plt
+import seaborn as sns
+g = sns.FacetGrid(df, hue="species", height=5, aspect=3.5/2)
+g.map(plt.scatter, "bill_length_mm", "bill_depth_mm").add_legend()
+```
