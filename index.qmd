@@ -79,7 +79,7 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
     - Global options: `_quarto.yml`: [docs](https://quarto.org/docs/websites/index.html#config-file)
     - Page front matter: [docs](https://quarto.org/docs/output-formats/html-basics.html)
     - Overriding global options per directory: [docs](https://quarto.org/docs/projects/quarto-projects.html#directory-metadata)
-    - Repeatable options: [listing_meta](https://github.com/hamelsmu/hamel/blob/master/notes/_listing_meta.yml) and merging that with `metadata-files` [front matter]](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)
+    - Repeatable options: [listing_meta](https://github.com/hamelsmu/hamel/blob/master/notes/_listing_meta.yml) and merging that with `metadata-files` [front matter](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)
 - Shiny Live
     - TODO: add example.
 - Where to get help:

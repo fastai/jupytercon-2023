@@ -1,5 +1,6 @@
 project:
   type: website
+  resources: ["nbdev.png"]
 
 website:
   title: "nbdev Tutorial: JupyterCon 2023"
