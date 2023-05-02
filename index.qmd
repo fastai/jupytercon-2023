@@ -46,8 +46,8 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
         - `CMD + SHIFT + O`; outline navigator
         - `CMD  + T`; see tags (project wide)
     - VSCode Extension
-        - Show options here https://quarto.org/docs/tools/vscode.html
-        - Visual mode: https://quarto.org/docs/visual-editor/vscode/
+        - Show options [reference](https://quarto.org/docs/tools/vscode.html)
+        - Visual mode [reference](https://quarto.org/docs/visual-editor/vscode/).
             - Editor Toolbar
                 - Tables (so much nicer than markdown!)
 - Different formats
