@@ -13,14 +13,6 @@ jupyter: python3
 
 # Palmer Penguins
 
-## Here is a table
-
-| Col1 | Col2 | Col3 |
-|------|------|------|
-|      |      |      |
-|      |      |      |
-|      |      |      |
-
 ```{python}
 #| echo: false
 import pandas as pd

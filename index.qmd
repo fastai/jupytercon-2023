@@ -23,25 +23,28 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
 
 - Install Quarto
 - Install VSCode Extensions
+- Create a new project, see the [_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
 - [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/basics.ipynb)
     - No execution by default
 - [cell-options.qmd](https://github.com/fastai/jupytercon-2023/blob/main/_quarto_demo/cell-options.qmd)
     - The qmd format is interesting and mirrors the experience of RStudio to a large extent
     - Running cells: 
-        - CMD + SHIFT + Enter
+        - `CMD + SHIFT + Enter`
         - Jupyter cache (pip install Jupyter Cache)
-    - Change value in cell (execution by default vs notebooks not executing by default)
-    - Quarto: Assist Panel, show how it works (only works in .qmd) right now
+    - Change value in cell (execution by default vs. notebooks not executing by default)
+    - Quarto: Assist Panel, show how it works (only works in `.qmd`) right now.
     - Customizing output
         - Code cell options:
-            - echo: false
+            - `echo: true|false|fenced`
+            - `include: false`
+            - `output: true|false|asis`
         - Front matter
             - `code-fold: true`
-            - code-fold: true
-        - Other options https://quarto.org/docs/reference/cells/cells-jupyter.html#overview
+            - `code-tools: true`
+        - Other [important cell options](https://quarto.org/docs/reference/cells/cells-jupyter.html#overview)
     - Hotkeys: 
-        - CMD + SHIFT + O; outline navigator
-        - CMD  + T; see tags (project wide)
+        - `CMD + SHIFT + O`; outline navigator
+        - `CMD  + T`; see tags (project wide)
     - VSCode Extension
         - Show options here https://quarto.org/docs/tools/vscode.html
         - Visual mode: https://quarto.org/docs/visual-editor/vscode/
