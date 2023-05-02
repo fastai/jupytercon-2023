@@ -1,6 +1,6 @@
 ---
 title: "nbdev Tutorial"
-description: "An outline and list of materials for the nbdev tutorial"
+description: "An outline of the nbdev + Quarto tutorial for JupyterCon, 2023."
 image: nbdev.png
 ---
 
