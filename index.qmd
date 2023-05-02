@@ -23,9 +23,9 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
 
 - Install Quarto
 - Install VSCode Extensions
-- [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/quarto_demo/basics.ipynb)
+- [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/basics.ipynb)
     - No execution by default
-- [cell_options.qmd](https://github.com/fastai/jupytercon-2023/tree/main/quarto_demo/cell_options.qmd)
+- [cell-options.qmd](https://github.com/fastai/jupytercon-2023/blob/main/_quarto_demo/cell-options.qmd)
     - The qmd format is interesting and mirrors the experience of RStudio to a large extent
     - Running cells: 
         - CMD + SHIFT + Enter
@@ -48,11 +48,11 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
             - Editor Toolbar
                 - Tables (so much nicer than markdown!)
 - Different formats
-    - [msword.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/quarto_demo/msword.ipynb)
-    - [presentation.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/quarto_demo/presentation.ipynb)
-    - [pdf.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/quarto_demo/pdf.ipynb)
+    - [msword.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/msword.ipynb)
+    - [presentation.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/presentation.ipynb)
+    - [pdf.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/pdf.ipynb)
 - Some of my favorite features
-    - [annotation.qmd](https://github.com/fastai/jupytercon-2023/tree/main/quarto_demo/annotation.qmd)
+    - [annotation.qmd](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/annotation.qmd)
         - You can make multi-line by commenting twice
     - Conditional formatting
         - Show:  code ~/github/nbdev/nbs/getting_started.ipynb
