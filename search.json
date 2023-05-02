@@ -1,38 +1,52 @@
 [
   {
+    "objectID": "gha.html",
+    "href": "gha.html",
+    "title": "Example GitHub Action",
+    "section": "",
+    "text": ".gitub/workflows/publish.yml\n\non:\n1  workflow_dispatch:\n  pull_request:\n  push:\n    branches: release-prod\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n2      - uses: actions/setup-python@v4\n        with:\n          python-version: '3.10'\n          \n      - name: install nbformat for ipynb filter\n        run: pip install nbformat==5.7.3\n        \n3      - name: Check out repository\n        uses: actions/checkout@v3\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n        with:\n4          version: \"1.2.475\"\n\n5      - name: Render\n        uses: quarto-dev/quarto-actions/render@v2\n        with:\n          to: html\n\n6      - name: Deploy to GitHub Pages\n        if: github.event_name != 'pull_request'\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./_site\n          cname: yoursite.com\n\n\n1\n\nTrigger the action on push, pull request, or manually\n\n2\n\nSet up Python and install nbformat\n\n3\n\nCheck out the repository\n\n4\n\nPin the version of Quarto to use\n\n5\n\nRender the site\n\n6\n\nPublish the site to GitHub Pages"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "nbdev Tutorial",
     "section": "",
-    "text": "The slides.\nThe GitHub repo with all of the examples and the source code for this site."
+    "text": "The slides for this talk.\nThe GitHub repo with all of the examples and the source code for this site."
   },
   {
     "objectID": "index.html#resources-for-this-tutorial",
     "href": "index.html#resources-for-this-tutorial",
     "title": "nbdev Tutorial",
     "section": "",
-    "text": "The slides.\nThe GitHub repo with all of the examples and the source code for this site."
+    "text": "The slides for this talk.\nThe GitHub repo with all of the examples and the source code for this site."
   },
   {
-    "objectID": "index.html#pre-requisites",
-    "href": "index.html#pre-requisites",
+    "objectID": "index.html#pre-requisites-5-minutes",
+    "href": "index.html#pre-requisites-5-minutes",
     "title": "nbdev Tutorial",
-    "section": "Pre-requisites",
-    "text": "Pre-requisites\n\nInstall Quarto\nInstall JupyterLab with pip install jupyterlab.\nInstall nbdev with pip install nbdev.\nInstall the nbdev VSCode extension 1."
+    "section": "Pre-requisites (5 minutes)",
+    "text": "Pre-requisites (5 minutes)\n\nInstall Quarto.\nInstall JupyterLab with pip install jupyterlab.\nInstall nbdev with pip install nbdev.\nInstall the nbdev VSCode extension 1.\nOptionally, install the github cli."
   },
   {
-    "objectID": "index.html#intro-30-minutes",
-    "href": "index.html#intro-30-minutes",
+    "objectID": "index.html#intro-20-minutes",
+    "href": "index.html#intro-20-minutes",
     "title": "nbdev Tutorial",
-    "section": "1. Intro (30 minutes)",
-    "text": "1. Intro (30 minutes)\nMotivation for nbdev – literate & exploratory programming. slides"
+    "section": "1. Intro (20 minutes)",
+    "text": "1. Intro (20 minutes)\nMotivation for nbdev – literate & exploratory programming (slides)."
   },
   {
-    "objectID": "index.html#quarto-walkthrough-30-minutes",
-    "href": "index.html#quarto-walkthrough-30-minutes",
+    "objectID": "index.html#quarto-walkthrough-40-minutes",
+    "href": "index.html#quarto-walkthrough-40-minutes",
     "title": "nbdev Tutorial",
-    "section": "2. Quarto Walkthrough (30 minutes)",
-    "text": "2. Quarto Walkthrough (30 minutes)\n\nInstall Quarto\nInstall VSCode Extensions\nCreate a new project, see the _quarto.yml file.\nbasics.ipynb\n\nNo execution by default\n\ncell-options.qmd\n\nThe qmd format is interesting and mirrors the experience of RStudio to a large extent\nRunning cells:\n\nCMD + SHIFT + Enter\nJupyter cache (pip install Jupyter Cache)\n\nChange value in cell (execution by default vs. notebooks not executing by default)\nQuarto: Assist Panel, show how it works (only works in .qmd) right now.\nCustomizing output\n\nCode cell options:\n\necho: true|false|fenced\ninclude: false\noutput: true|false|asis\n\nFront matter\n\ncode-fold: true\ncode-tools: true\n\nOther important cell options\n\nHotkeys:\n\nCMD + SHIFT + O; outline navigator\nCMD  + T; see tags (project wide)\n\nVSCode Extension\n\nShow options reference\nVisual mode reference.\n\nEditor Toolbar\n\nTables (so much nicer than markdown!)\n\n\n\n\nDifferent formats\n\nmsword.ipynb\npresentation.ipynb\npdf.ipynb\n\nSome of my favorite features\n\nannotation.qmd\n\nYou can make multi-line by commenting twice\n\nConditional formatting\n\nShow: code ~/github/nbdev/nbs/getting_started.ipynb\nNotice special cell tags that let you know when something is visible\n\nTesting your docs by executing code:\n\nSet execute: enabled: true in _quarto.yml or pass the—execute flag to quarto\nUse the execution: freeze: true if you need to opt a notebook out of execution. reference.\nThe Jupyter cache can be helpful while developing: reference.\nExternal listings example."
+    "section": "2. Quarto Walkthrough (40 minutes)",
+    "text": "2. Quarto Walkthrough (40 minutes)\n\nConfirm pre-requisites\nCreate a new project using quarto project create, see the _quarto.yml file.\nbasics.ipynb\n\nNo execution by default\n\ncell-options.qmd\n\nThe qmd format is interesting and mirrors the experience of RStudio to a large extent\nRunning cells:\n\nCMD + SHIFT + Enter\nJupyter cache (pip install Jupyter Cache)\n\nChange value in cell (execution by default vs. notebooks not executing by default)\nQuarto: Assist Panel, show how it works (only works in .qmd) right now.\nCustomizing output\n\nCode cell options:\n\necho: true|false|fenced\ninclude: false\noutput: true|false|asis\n\nFront matter\n\ncode-fold: true\ncode-tools: true\n\nOther important cell options\nGeneral HTML options\n\nHotkeys:\n\nCMD + SHIFT + O; outline navigator\nCMD  + T; see tags (project wide)\n\nVSCode Extension\n\nShow options reference\nVisual mode reference.\n\nEditor Toolbar\n\nTables (so much nicer than markdown!)\n\n\n\n\nDifferent formats\n\nmsword.ipynb\npresentation.ipynb\npdf.ipynb\n\nSome of my favorite features\n\nannotation.qmd\n\nYou can make multi-line by commenting twice\n\nConditional formatting\n\nShow locally in VSCode: nbdev/nbs/getting_started.ipynb.\nNotice special cell tags that let you know when something is visible\n\nTesting your docs by executing code:\n\nSet execute: enabled: true in _quarto.yml or pass the—execute flag to quarto\nUse the execution: freeze: true if you need to opt a notebook out of execution. reference.\nThe Jupyter cache can be helpful while developing: reference.\n\nExternal listings example | docs.\nNotes/TILs:\n\nHamel’s notes\nWasim’s TILs\n\nNotebook filters:\n\nexample | docs\n\n\nPublishing & Previewing\n\nquarto publish\nquarto render followed by netlify\nOfficial Quarto GitHub Actions.\n\nexample\n\n\nConfiguration: _quarto.yml, front matter etc\n\nGlobal options: _quarto.yml: docs\nPage front matter: docs\nOverriding global options per directory: docs\nRepeatable options: listing_meta and merging that with metadata-files [front matter]](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)\n\nShiny Live\n\nTODO: add example\n\nWhere to get help:\n\nThe quarto website repo: https://github.com/quarto-dev/quarto-web\nExample Gallery: https://quarto.org/docs/gallery/"
+  },
+  {
+    "objectID": "index.html#nbdev-walkthrough-60-minutes",
+    "href": "index.html#nbdev-walkthrough-60-minutes",
+    "title": "nbdev Tutorial",
+    "section": "3. nbdev Walkthrough (60 minutes)",
+    "text": "3. nbdev Walkthrough (60 minutes)"
   },
   {
     "objectID": "index.html#additional-reading",
