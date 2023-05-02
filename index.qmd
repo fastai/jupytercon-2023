@@ -21,9 +21,8 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
 
 ## 2. Quarto Walkthrough (30 minutes)
 
-- Install Quarto
-- Install VSCode Extensions
-- Create a new project, see the [_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
+- Confirm pre-requisites
+- Create a new project using `quarto project create`, see the [_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
 - [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/basics.ipynb)
     - No execution by default
 - [cell-options.qmd](https://github.com/fastai/jupytercon-2023/blob/main/_quarto_demo/cell-options.qmd)
@@ -64,7 +63,7 @@ Motivation for nbdev -- literate & exploratory programming.  [slides](https://do
         - Set `execute: enabled: true` in _quarto.yml or pass the`—execute` flag to quarto
         - Use the `execution: freeze: true` if you need to opt a notebook out of execution. [reference](https://quarto.org/docs/computations/caching.html#disabling-execution).
         - The Jupyter cache can be helpful while developing: [reference](https://quarto.org/docs/computations/caching.html#jupyter-cache).
-        - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16). 
+    - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16). 
 
 
 
