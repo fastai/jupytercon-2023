@@ -1,0 +1,21 @@
+---
+title: "Code Annotation"
+format: html
+---
+
+```python
+word_index = imdb.get_word_index() # <1>
+reverse_word_index = dict(
+    [(value, key) for (key, value) in word_index.items()]) # <2>
+decoded_review = ' '.join(
+    [reverse_word_index.get(i - 3, '?') for i in train_data[0]]) # <3>
+```
+
+1. `word_index` is a dictionary mapping words to an integer index
+
+2.  Reverses it, mapping integer indices to words
+
+3.  Decodes the review. Note that the indices are offset by 3
+    because 0, 1, and 2 are reserved indices for "padding",
+    "start of sequence" and "unknown".
+

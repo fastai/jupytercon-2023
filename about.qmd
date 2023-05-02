@@ -1,5 +1,14 @@
 ---
-title: "About"
+title: "Instructors"
+description: "Information on your instructors for the course."
 ---
 
-About this site
+::: {layout="[[1,1,1],]"}
+
+![[JJ Allaire](https://www.linkedin.com/in/jjallaire/)](photos/jj.png){width=150 fig-align="center"}
+
+![[Wasim Lorgat](https://wasimlorgat.com/)](photos/wasim.jpeg){width=150}
+
+![[Hamel Husain](https://hamel.dev)](photos/hamel.jpeg){width=150}
+
+:::

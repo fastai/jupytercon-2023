@@ -2,11 +2,10 @@ project:
   type: website
 
 website:
-  title: "."
+  title: "nbdev Tutorial: JupyterCon 2023"
+  image: nbdev.png
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - about.qmd
 
 format:

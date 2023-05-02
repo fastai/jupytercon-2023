@@ -1,7 +1,76 @@
 ---
-title: "."
+title: "nbdev Tutorial"
+description: "An outline and list of materials for the nbdev tutorial"
 ---
 
-This is a Quarto website.
+## Resources For This Tutorial
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- The [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing).
+- The [GitHub repo](https://github.com/fastai/jupytercon-2023) with all of the examples and the source code for this site.
+
+## Pre-requisites
+
+1. Install [Quarto](https://quarto.org/docs/get-started/)
+2. Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
+3. Install [nbdev](https://nbdev.fast.ai/) with `pip install nbdev`.
+4. Install the [nbdev VSCode extension](https://marketplace.visualstudio.com/items?itemName=hamelhusain.nbdev) [^1].
+
+## 1. Intro (30 minutes)
+
+Motivation for nbdev -- literate & exploratory programming.  [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing)
+
+## 2. Quarto Walkthrough (30 minutes)
+
+- Install Quarto
+- Install VSCode Extensions
+- basics.ipynb
+    - No execution by default
+- cell_options.qmd
+    - The qmd format is interesting and mirrors the experience of RStudio to a large extent
+    - Running cells: 
+        - CMD + SHIFT + Enter
+        - Jupyter cache (pip install Jupyter Cache)
+    - Change value in cell (execution by default vs notebooks not executing by default)
+    - Quarto: Assist Panel, show how it works (only works in .qmd) right now
+    - Customizing output
+        - Code cell options:
+            - echo: false
+        - Front matter
+            - code-fold: true
+            - code-fold: true
+        - Other options https://quarto.org/docs/reference/cells/cells-jupyter.html#overview
+    - Hotkeys: 
+        - CMD + SHIFT + O; outline navigator
+        - CMD  + T; see tags (project wide)
+    - VSCode Extension
+        - Show options here https://quarto.org/docs/tools/vscode.html
+        - Visual mode: https://quarto.org/docs/visual-editor/vscode/
+            - Editor Toolbar
+                - Tables (so much nicer than markdown!)
+- Different formats
+    - [msword.ipynb](https:/quarto_demo/msword.ipynb)
+    - [presentation.ipynb](./quarto_demo/presentation.ipynb)
+    - [pdf.ipynb](./quarto_demo/pdf.ipynb)
+- Some of my favorite features
+    - [annotation.qmd](./quarto_demo/annotation.qmd)
+        - You can make multi-line by commenting twice
+    - Conditional formatting
+        - Show:  code ~/github/nbdev/nbs/getting_started.ipynb
+        - Notice special cell tags that let you know when something is visible
+    - Testing your docs by executing code:
+        - Set `execute: enabled: true` in _quarto.yml or pass the`—execute` flag to quarto
+        - Use the `execution: freeze: true` if you need to opt a notebook out of execution. [reference](https://quarto.org/docs/computations/caching.html#disabling-execution).
+        - The Jupyter cache can be helpful while developing: [reference](https://quarto.org/docs/computations/caching.html#jupyter-cache).
+        - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16). 
+
+
+
+
+[^1]: This will automatically install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extensions as well.
+
+
+## Additional Reading
+
+- [nbdev docs](https://nbdev.fast.ai/)
+- [Quarto docs](https://quarto.org/docs/)
+- [About](./about.qmd) the instructors.
