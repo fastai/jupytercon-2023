@@ -8,7 +8,9 @@ description: "An outline and list of materials for the nbdev tutorial"
 - The [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing) for this talk.
 - The [GitHub repo](https://github.com/fastai/jupytercon-2023) with all of the examples and the source code for this site.
 
-## Pre-requisites (5 minutes)
+## Optional Pre-requisites
+
+_Optional because it's best to watch and try this yourself at home._
 
 1. Install [Quarto](https://quarto.org/docs/get-started/).
 2. Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
@@ -22,7 +24,6 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
 
 ## 2. Quarto Walkthrough (40 minutes)
 
-- Confirm pre-requisites
 - Create a new project using `quarto project create`, see the [_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
 - [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/basics.ipynb)
     - No execution by default
@@ -32,7 +33,7 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
         - `CMD + SHIFT + Enter`
         - Jupyter cache (pip install Jupyter Cache)
     - Change value in cell (execution by default vs. notebooks not executing by default)
-    - Quarto: Assist Panel, show how it works (only works in `.qmd`) right now.
+    - Quarto: Assist Panel, show how it works (only in `.qmd` now)
     - Customizing output
         - Code cell options:
             - `echo: true|false|fenced`
@@ -46,11 +47,10 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
     - Hotkeys: 
         - `CMD + SHIFT + O`; outline navigator
         - `CMD  + T`; see tags (project wide)
-    - VSCode Extension
-        - Show options [reference](https://quarto.org/docs/tools/vscode.html)
-        - Visual mode [reference](https://quarto.org/docs/visual-editor/vscode/).
-            - Editor Toolbar
-                - Tables (so much nicer than markdown!)
+- Other VSCode extension features
+    - [Options](https://quarto.org/docs/tools/vscode.html)
+    - [Visual mode](https://quarto.org/docs/visual-editor/vscode/)
+        - Editor Toolbar: makes **authoring tables** so much nicer than plain markdown!
 - Different formats
     - [msword.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/msword.ipynb)
     - [presentation.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/presentation.ipynb)
@@ -67,8 +67,7 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
         - The Jupyter cache can be helpful while developing: [reference](https://quarto.org/docs/computations/caching.html#jupyter-cache).
     - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16) | [docs](https://quarto.org/docs/websites/website-listings-custom.html#metadata-file-listings). 
     - Notes/TILs:
-        - [Hamel's notes](https://hamel.dev/notes/)
-        - [Wasim's TILs](https://wasimlorgat.com/tils/)
+        - [Hamel's notes](https://hamel.dev/notes/) | [Wasim's TILs](https://wasimlorgat.com/tils/)
     - Notebook filters:
         - [example](https://github.com/hamelsmu/hamel/blob/master/quarto_filter.py) | [docs](https://quarto.org/docs/extensions/nbfilter.html)
 - Publishing & Previewing
