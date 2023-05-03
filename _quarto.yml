@@ -4,6 +4,7 @@ project:
 
 website:
   title: "nbdev Tutorial: JupyterCon 2023"
+  favicon: icon.png
   description: "A nbdev + Quarto tutorial for JupyterCon 2023."
   image: nbdev.png
   open-graph: true
