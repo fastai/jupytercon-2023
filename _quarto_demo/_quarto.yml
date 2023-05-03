@@ -3,3 +3,6 @@ project:
 
 execute:
   enabled: true
+
+filters:
+  - shinylive
