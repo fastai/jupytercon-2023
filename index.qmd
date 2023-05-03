@@ -60,6 +60,7 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
     -   [Options](https://quarto.org/docs/tools/vscode.html)
     -   [Visual mode](https://quarto.org/docs/visual-editor/vscode/)
         -   Editor Toolbar: makes **authoring tables** so much nicer than plain markdown!
+        -   Remapping keys and toggling back and forth.  [superkey](https://superkey.app/) is a great tool for this.
 -   Different formats
     -   [msword.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/msword.ipynb)
     -   [presentation.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/presentation.ipynb)
