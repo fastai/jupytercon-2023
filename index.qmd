@@ -1,23 +1,31 @@
 ---
-title: "nbdev Tutorial"
-description: "An outline of the nbdev + Quarto tutorial for JupyterCon, 2023."
+title: "Nbdev Tutorial"
+description: "Resources for the nbdev + Quarto tutorial at JupyterCon, 2023."
 image: nbdev.png
 ---
 
+[Nbdev](https://nbdev.fast.ai/) is an exciting literate and exploratory programming framework. With nbdev, you write your tests, documentation and software in one context: a Jupyter Notebook. Nbdev leverages [Quarto](https://quarto.org/) to render documentation sites giving you additional power to customize your documentation.
+
+In this tutorial, we will walk you through how to use nbdev from the ground up, and provide an overview of some of the underlying technologies such as Quarto and [execnb](https://fastai.github.io/execnb/).
+
 ## Resources For This Tutorial
 
-- The [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing) for this talk.
-- The [GitHub repo](https://github.com/fastai/jupytercon-2023) with all of the examples and the source code for this site.
+-   The [slides](https://docs.google.com/presentation/d/1Ri4m4KxXaR5rH-zMM_EGZNhupj0SlpiSac2jAhpFpyI/edit?usp=sharing) for this talk.
+-   The [GitHub repo](https://github.com/fastai/jupytercon-2023) with all of the examples and the source code for this site.
 
 ## Optional Pre-requisites
 
-_Optional because it's best to watch and try this yourself at home._
+*Optional because it's best to watch and try this yourself at home.*
 
-1. Install [Quarto](https://quarto.org/docs/get-started/).
-2. Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
-3. Install [nbdev](https://nbdev.fast.ai/) with `pip install nbdev`.
-4. Install the [nbdev VSCode extension](https://marketplace.visualstudio.com/items?itemName=hamelhusain.nbdev) [^1].
-5. Optionally, install the [github cli](https://cli.github.com/).
+1.  Install [Quarto](https://quarto.org/docs/get-started/).
+2.  Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
+3.  Install [nbdev](https://nbdev.fast.ai/) with `pip install nbdev`.
+4.  Install VSCode by following [the official docs](https://code.visualstudio.com/download).
+5.  Install the [nbdev VSCode extension](https://marketplace.visualstudio.com/items?itemName=hamelhusain.nbdev) [^1].
+6.  Install the [Quarto JupyterLab extension](https://github.com/quarto-dev/quarto/tree/main/apps/jupyterlab).
+7.  Optionally, install the [github cli](https://cli.github.com/).
+
+[^1]: This will automatically install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extensions as well.
 
 ## 1. Intro (20 minutes)
 
@@ -25,74 +33,134 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
 
 ## 2. Quarto Walkthrough (40 minutes)
 
-- Create a new project using `quarto project create`, see the [_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
-- [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/basics.ipynb)
-    - No execution by default
-- [cell-options.qmd](https://github.com/fastai/jupytercon-2023/blob/main/_quarto_demo/cell-options.qmd)
-    - The qmd format is interesting and mirrors the experience of RStudio to a large extent
-    - Running cells: 
-        - `CMD + SHIFT + Enter`
-        - Jupyter cache (pip install Jupyter Cache)
-    - Change value in cell (execution by default vs. notebooks not executing by default)
-    - Quarto: Assist Panel, show how it works (only in `.qmd` now)
-    - Customizing output
-        - Code cell options:
-            - `echo: true|false|fenced`
-            - `include: false`
-            - `output: true|false|asis`
-        - Front matter
-            - `code-fold: true`
-            - `code-tools: true`
-        - Other [important cell options](https://quarto.org/docs/reference/cells/cells-jupyter.html#overview)
-        - General [HTML options](https://quarto.org/docs/output-formats/html-basics.html)
-    - Hotkeys: 
-        - `CMD + SHIFT + O`; outline navigator
-        - `CMD  + T`; see tags (project wide)
-- Other VSCode extension features
-    - [Options](https://quarto.org/docs/tools/vscode.html)
-    - [Visual mode](https://quarto.org/docs/visual-editor/vscode/)
-        - Editor Toolbar: makes **authoring tables** so much nicer than plain markdown!
-- Different formats
-    - [msword.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/msword.ipynb)
-    - [presentation.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/presentation.ipynb)
-    - [pdf.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/pdf.ipynb)
-- Some of my favorite features
-    - [annotation.qmd](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/annotation.qmd)
-        - You can make multi-line by commenting twice
-    - Conditional formatting
-        - Show locally in VSCode: [nbdev/nbs/getting_started.ipynb](https://github.com/fastai/nbdev/blob/master/nbs/getting_started.ipynb).
-        - Notice special cell tags that let you know when something is visible
-    - Testing your docs by executing code:
-        - Set `execute: enabled: true` in _quarto.yml or pass the`—execute` flag to quarto
-        - Use the `execution: freeze: true` if you need to opt a notebook out of execution. [reference](https://quarto.org/docs/computations/caching.html#disabling-execution).
-        - The Jupyter cache can be helpful while developing: [reference](https://quarto.org/docs/computations/caching.html#jupyter-cache).
-    - External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16) | [docs](https://quarto.org/docs/websites/website-listings-custom.html#metadata-file-listings). 
-    - Notes/TILs:
-        - [Hamel's notes](https://hamel.dev/notes/) | [Wasim's TILs](https://wasimlorgat.com/tils/)
-    - Notebook filters:
-        - [example](https://github.com/hamelsmu/hamel/blob/master/quarto_filter.py) | [docs](https://quarto.org/docs/extensions/nbfilter.html)
-- Publishing & Previewing
-    - `quarto publish`
-    - `quarto render` followed by `netlify`
-    - Official [Quarto GitHub Actions](https://github.com/quarto-dev/quarto-actions).
-        - [example](./gha.qmd)
-- Configuration: `_quarto.yml`, front matter etc
-    - Global options: `_quarto.yml`: [docs](https://quarto.org/docs/websites/index.html#config-file)
-    - Page front matter: [docs](https://quarto.org/docs/output-formats/html-basics.html)
-    - Overriding global options per directory: [docs](https://quarto.org/docs/projects/quarto-projects.html#directory-metadata)
-    - Repeatable options: [listing_meta](https://github.com/hamelsmu/hamel/blob/master/notes/_listing_meta.yml) and merging that with `metadata-files` [front matter](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)
-- Where to get help:
-    - The quarto website [repo](https://github.com/quarto-dev/quarto-web).
-    - Example [gallery](https://quarto.org/docs/gallery/).
-
-[^1]: This will automatically install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extensions as well.
+-   Create a new project using `quarto project create`, see the [\_quarto.yml](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/_quarto.yml) file.
+-   [basics.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/basics.ipynb)
+    -   No execution by default
+-   [cell-options.qmd](https://github.com/fastai/jupytercon-2023/blob/main/_quarto_demo/cell-options.qmd)
+    -   The qmd format is interesting and mirrors the experience of RStudio to a large extent
+    -   Running cells:
+        -   `CMD + SHIFT + Enter`
+        -   Jupyter cache (pip install Jupyter Cache)
+    -   Change value in cell (execution by default vs. notebooks not executing by default)
+    -   Quarto: Assist Panel, show how it works (only in `.qmd` now)
+    -   Customizing output
+        -   Code cell options:
+            -   `echo: true|false|fenced`
+            -   `include: false`
+            -   `output: true|false|asis`
+        -   Front matter
+            -   `code-fold: true`
+            -   `code-tools: true`
+        -   Other [important cell options](https://quarto.org/docs/reference/cells/cells-jupyter.html#overview)
+        -   General [HTML options](https://quarto.org/docs/output-formats/html-basics.html)
+    -   Hotkeys:
+        -   `CMD + SHIFT + O`; outline navigator
+        -   `CMD  + T`; see tags (project wide)
+-   Other VSCode extension features
+    -   [Options](https://quarto.org/docs/tools/vscode.html)
+    -   [Visual mode](https://quarto.org/docs/visual-editor/vscode/)
+        -   Editor Toolbar: makes **authoring tables** so much nicer than plain markdown!
+-   Different formats
+    -   [msword.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/msword.ipynb)
+    -   [presentation.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/presentation.ipynb)
+    -   [pdf.ipynb](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/pdf.ipynb)
+-   Some of my favorite features
+    -   [annotation.qmd](https://github.com/fastai/jupytercon-2023/tree/main/_quarto_demo/annotation.qmd)
+        -   You can make multi-line by commenting twice
+    -   Conditional formatting
+        -   Show locally in VSCode: [nbdev/nbs/getting_started.ipynb](https://github.com/fastai/nbdev/blob/master/nbs/getting_started.ipynb).
+        -   Notice special cell tags that let you know when something is visible
+    -   Testing your docs by executing code:
+        -   Set `execute: enabled: true` in \_quarto.yml or pass the`—execute` flag to quarto
+        -   Use the `execution: freeze: true` if you need to opt a notebook out of execution. [reference](https://quarto.org/docs/computations/caching.html#disabling-execution).
+        -   The Jupyter cache can be helpful while developing: [reference](https://quarto.org/docs/computations/caching.html#jupyter-cache).
+    -   External listings [example](https://github.com/hamelsmu/hamel/blob/master/index.qmd#L16) \| [docs](https://quarto.org/docs/websites/website-listings-custom.html#metadata-file-listings).
+    -   Notes/TILs:
+        -   [Hamel's notes](https://hamel.dev/notes/) \| [Wasim's TILs](https://wasimlorgat.com/tils/)
+    -   Notebook filters:
+        -   [example](https://github.com/hamelsmu/hamel/blob/master/quarto_filter.py) \| [docs](https://quarto.org/docs/extensions/nbfilter.html)
+-   Publishing & Previewing
+    -   `quarto publish`
+    -   `quarto render` followed by `netlify`
+    -   Official [Quarto GitHub Actions](https://github.com/quarto-dev/quarto-actions).
+        -   [example](./gha.qmd)
+-   Configuration: `_quarto.yml`, front matter etc
+    -   Global options: `_quarto.yml`: [docs](https://quarto.org/docs/websites/index.html#config-file)
+    -   Page front matter: [docs](https://quarto.org/docs/output-formats/html-basics.html)
+    -   Overriding global options per directory: [docs](https://quarto.org/docs/projects/quarto-projects.html#directory-metadata)
+    -   Repeatable options: [listing_meta](https://github.com/hamelsmu/hamel/blob/master/notes/_listing_meta.yml) and merging that with `metadata-files` [front matter](https://github.com/hamelsmu/hamel/blob/master/notes/quarto/index.qmd)
+-   Where to get help:
+    -   The quarto website [repo](https://github.com/quarto-dev/quarto-web).
+    -   Example [gallery](https://quarto.org/docs/gallery/).
 
 ## 3. nbdev Walkthrough (60 minutes)
 
+This walkthrough is largely based on the official [end-to-end walkthrough](https://nbdev.fast.ai/tutorials/tutorial.html) and [notebook best practices guide](https://nbdev.fast.ai/tutorials/best_practices.html).
 
+-   [Installation](https://nbdev.fast.ai/tutorials/tutorial.html#installation)
+    -   Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
+    -   Install [nbdev](https://nbdev.fast.ai/) with `pip install nbdev`.
+    -   Install [Quarto](https://quarto.org/docs/get-started/).
+    -   Install the [Quarto JupyterLab extension](https://github.com/quarto-dev/quarto/tree/main/apps/jupyterlab).
+-   [Setup your nbdev project](https://nbdev.fast.ai/tutorials/tutorial.html#first-steps)
+    -   Create an empty GitHub repo
+    -   Enable GitHub Pages
+    -   Initialise your repo with [`nbdev_new`](https://nbdev.fast.ai/api/cli.html#nbdev_new)
+    -   Check out your workflows
+        -   **CI** -- The CI (continuous integration) workflow streamlines your developer workflow, particularly with multiple collaborators
+        -   **Deploy to GitHub Pages** -- Builds your docs with Quarto and deploys it to GitHub Pages
+    -   Check out your docs
+-   [Make your first edit](https://nbdev.fast.ai/tutorials/tutorial.html#make-your-first-edit)
+    -   Install [hooks](https://nbdev.fast.ai/tutorials/git_friendly_jupyter.html) for git-friendly notebooks
+    -   Build your library
+    -   Install your package
+    -   Preview your docs
+    -   Edit `00_core.ipynb` -- adding your own package's code
+        -   `#| default_exp` directive ([docs](https://nbdev.fast.ai/explanations/directives.html#default_exp-name))
+        -   Add your own frontmatter (nbdev vs Quarto frontmatter formats) ([docs](https://nbdev.fast.ai/api/frontmatter.html))
+        -   Add your own function using the `#| export` directive ([docs](https://nbdev.fast.ai/explanations/directives.html#export))
+        -   Add your own examples, tests, and docs using `assert` and `fastcore.test` ([docs](https://fastcore.fast.ai/test.html))
+    -   Prepare your changes with `nbdev_prepare`, a shortcut for:
+        -   `nbdev_export`: Export `.py` modules from `.ipynb` notebooks
+        -   `nbdev_test`: Test notebooks
+        -   `nbdev_clean`: Clean notebooks
+        -   `nbdev_readme`: Update `README.md`
+    -   Edit `index.ipynb` -- your home page
+    -   Push to GitHub
+    -   Check the updated repo and docs
+-   Advanced functionality
+    -   Doclinks: referencing related symbols ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#reference-related-symbols-with-doclinks))
+    -   Docments: documenting callable parameters ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#document-parameters-with-docments))
+    -   Documenting error-cases as tests ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#document-error-cases-as-tests))
+    -   `@patch`: Define classes across multiple cells ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#document-class-methods-with-show_doc-or-fastcore.basics.patch))
+    -   `show_doc`: Document external objects ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#document-class-methods-with-show_doc-or-fastcore.basics.patch))
+    -   Putting it all together: nbdev vs classical Python development ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#putting-it-all-together-an-annotated-example))
+
+### Awesome nbdev projects
+
+#### By fast.ai
+
+-   [nbdev](https://github.com/fastai/nbdev): The nbdev software development framework is itself an nbdev project
+-   [execnb](https://fastai.github.io/execnb/): Fast and lightweight Jupyter notebook execution engine
+-   [fastai](http://docs.fast.ai/): Simplify training fast and accurate neural nets using modern best practices
+-   [fastcore](https://fastcore.fast.ai/): Python goodies to make your coding faster, easier, and more maintainable
+-   [ghapi](https://ghapi.fast.ai/): A delightful and complete interface to GitHub's amazing API
+-   [ghtop](https://fastai.github.io/ghtop-demo/): A real-time terminal user interface (TUI) for GitHub
+
+#### By the community
+
+-   [AlphaPept](https://mannlabs.github.io/alphapept/): A modular Python-based framework for mass spectrometry
+-   [FastKafka](https://fastkafka.airt.ai/): Build asynchronous web services that interact with Kafka topics
+-   [InstructGOOSE](https://xrsrke.github.io/instructGOOSE/): Implementation of Reinforcement Learning from Human Feedback (RLHF) from the InstructGPT paper
+-   [nbdev-mkdocs](https://nbdev-mkdocs.airt.ai/): Extend nbdev to generate docs using Material for Mkdocs
+-   [nbdev-extensions](https://github.com/muellerzr/nbdev-extensions): A collection of nbdev extensions
+-   [nbstata](https://hugetim.github.io/nbstata/): A Jupyter kernel for Stata built on pystata
+-   [streamlit-jupyter](https://ddobrinskiy.github.io/streamlit-jupyter/readme.html): Preview and develop streamlit applications in Jupyter notebooks
+-   [sveltish](https://fredguth.github.io/sveltish/): Svelte Stores in Python
+-   [UPIT](https://www.tanishq.ai/UPIT/): Unpaired image-to-image translation using fastai/PyTorch
 
 ## Additional Reading
 
-- [nbdev docs](https://nbdev.fast.ai/)
-- [Quarto docs](https://quarto.org/docs/)
-- [About](./about.qmd) the instructors.
+-   [nbdev docs](https://nbdev.fast.ai/)
+-   [Quarto docs](https://quarto.org/docs/)
+-   [About](./about.qmd) the instructors.

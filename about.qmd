@@ -3,12 +3,27 @@ title: "Instructors"
 description: "Information on your instructors for the course."
 ---
 
-::: {layout="[[1,1,1],]"}
+## J.J. Allaire
 
-![[JJ Allaire](https://www.linkedin.com/in/jjallaire/)](photos/jj.png){width=150 fig-align="center"}
+[![](photos/jj.png){width="150" fig-align="center"}](https://www.linkedin.com/in/jjallaire/)
 
-![[Wasim Lorgat](https://wasimlorgat.com/)](photos/wasim.jpeg){width=150}
+[J.J.](https://www.linkedin.com/in/jjallaire/) is the founder of [Posit](https://posit.co/) and the creator of the RStudio IDE. J.J. is an author of several packages in the R Markdown publishing ecosystem including rmarkdown, flexdashboard, learnr, and distill, and also worked extensively on the R interfaces to Python and TensorFlow. J.J. is now leading the Quarto project, which is a new Jupyter-based scientific and technical publishing system.
 
-![[Hamel Husain](https://hamel.dev)](photos/hamel.jpeg){width=150}
+J.J. is also appearing in another JupyterCon 2023 talk: [Jupyter Notebooks + Quarto for customizable and reproducible documents, websites and books](https://cfp.jupytercon.com/2023/talk/CZDZSB/).
 
-:::
+
+## Wasim Lorgat
+
+[![](photos/wasim.jpeg){width="150" fig-align="center"}](https://wasimlorgat.com/)
+
+[Wasim](https://wasimlorgat.com/) is a software engineer, data scientist, and core developer of [nbdev](https://nbdev.fast.ai/). Wasimkhas held technical leadership positions in South African startups. At DataProphet, he led the development of machine learning techniques for reducing defects in manufacturing plants. And at Aerobotics, he led the team that built aerial drone computer vision systems to provide farmers with high-resolution crop data.
+
+You can find out more about Wasim on [his website](https://wasimlorgat.com/).
+
+## Hamel Husain
+
+[![](photos/hamel.jpeg){width="150" fig-align="center"}](https://hamel.dev)
+
+[Hamel](https://hamel.dev) is a core developer of [nbdev](https://nbdev.fast.ai/) and key community member of [fast.ai](https://fast.ai/). Hamel has built ML infrastructure and deployed data products at Airbnb, GitHub, and DataRobot. Hamel also contributes to many open-source projects related to machine learning infrastructure and developer tools.
+
+You can find more about Hamel on [his website](https://hamel.dev/).
