@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="An outline of the nbdev + Quarto tutorial for JupyterCon, 2023.">
+<meta name="description" content="Resources for the nbdev + Quarto tutorial at JupyterCon, 2023.">
 
-<title>nbdev Tutorial: JupyterCon 2023 - nbdev Tutorial</title>
+<title>nbdev Tutorial: JupyterCon 2023 - Nbdev Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,8 +62,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="nbdev Tutorial: JupyterCon 2023 - nbdev Tutorial">
-<meta property="og:description" content="An outline of the nbdev + Quarto tutorial for JupyterCon, 2023.">
+<meta property="og:title" content="nbdev Tutorial: JupyterCon 2023 - Nbdev Tutorial">
+<meta property="og:description" content="Resources for the nbdev + Quarto tutorial at JupyterCon, 2023.">
 <meta property="og:image" content="https://fastai.github.io/jupytercon-2023/nbdev.png">
 <meta property="og:site-name" content="nbdev Tutorial: JupyterCon 2023">
 <meta property="og:image:height" content="1009">
@@ -111,7 +111,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#optional-pre-requisites" id="toc-optional-pre-requisites" class="nav-link" data-scroll-target="#optional-pre-requisites">Optional Pre-requisites</a></li>
   <li><a href="#intro-20-minutes" id="toc-intro-20-minutes" class="nav-link" data-scroll-target="#intro-20-minutes">1. Intro (20 minutes)</a></li>
   <li><a href="#quarto-walkthrough-40-minutes" id="toc-quarto-walkthrough-40-minutes" class="nav-link" data-scroll-target="#quarto-walkthrough-40-minutes">2. Quarto Walkthrough (40 minutes)</a></li>
-  <li><a href="#nbdev-walkthrough-60-minutes" id="toc-nbdev-walkthrough-60-minutes" class="nav-link" data-scroll-target="#nbdev-walkthrough-60-minutes">3. nbdev Walkthrough (60 minutes)</a></li>
+  <li><a href="#nbdev-walkthrough-60-minutes" id="toc-nbdev-walkthrough-60-minutes" class="nav-link" data-scroll-target="#nbdev-walkthrough-60-minutes">3. nbdev Walkthrough (60 minutes)</a>
+  <ul class="collapse">
+  <li><a href="#awesome-nbdev-projects" id="toc-awesome-nbdev-projects" class="nav-link" data-scroll-target="#awesome-nbdev-projects">Awesome nbdev projects</a></li>
+  </ul></li>
   <li><a href="#additional-reading" id="toc-additional-reading" class="nav-link" data-scroll-target="#additional-reading">Additional Reading</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fastai/jupytercon-2023/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -121,12 +124,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">nbdev Tutorial</h1>
+<h1 class="title">Nbdev Tutorial</h1>
 </div>
 
 <div>
   <div class="description">
-    An outline of the nbdev + Quarto tutorial for JupyterCon, 2023.
+    Resources for the nbdev + Quarto tutorial at JupyterCon, 2023.
   </div>
 </div>
 
@@ -141,6 +144,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><a href="https://nbdev.fast.ai/">Nbdev</a> is an exciting literate and exploratory programming framework. With nbdev, you write your tests, documentation and software in one context: a Jupyter Notebook. Nbdev leverages <a href="https://quarto.org/">Quarto</a> to render documentation sites giving you additional power to customize your documentation.</p>
+<p>In this tutorial, we will walk you through how to use nbdev from the ground up, and provide an overview of some of the underlying technologies such as Quarto and <a href="https://fastai.github.io/execnb/">execnb</a>.</p>
 <section id="resources-for-this-tutorial" class="level2">
 <h2 class="anchored" data-anchor-id="resources-for-this-tutorial">Resources For This Tutorial</h2>
 <ul>
@@ -155,7 +160,9 @@ ul.task-list li input[type="checkbox"] {
 <li>Install <a href="https://quarto.org/docs/get-started/">Quarto</a>.</li>
 <li>Install <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab</a> with <code>pip install jupyterlab</code>.</li>
 <li>Install <a href="https://nbdev.fast.ai/">nbdev</a> with <code>pip install nbdev</code>.</li>
+<li>Install VSCode by following <a href="https://code.visualstudio.com/download">the official docs</a>.</li>
 <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=hamelhusain.nbdev">nbdev VSCode extension</a> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
+<li>Install the <a href="https://github.com/quarto-dev/quarto/tree/main/apps/jupyterlab">Quarto JupyterLab extension</a>.</li>
 <li>Optionally, install the <a href="https://cli.github.com/">github cli</a>.</li>
 </ol>
 </section>
@@ -269,6 +276,89 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="nbdev-walkthrough-60-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="nbdev-walkthrough-60-minutes">3. nbdev Walkthrough (60 minutes)</h2>
+<p>This walkthrough is largely based on the official <a href="https://nbdev.fast.ai/tutorials/tutorial.html">end-to-end walkthrough</a> and <a href="https://nbdev.fast.ai/tutorials/best_practices.html">notebook best practices guide</a>.</p>
+<ul>
+<li><a href="https://nbdev.fast.ai/tutorials/tutorial.html#installation">Installation</a>
+<ul>
+<li>Install <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab</a> with <code>pip install jupyterlab</code>.</li>
+<li>Install <a href="https://nbdev.fast.ai/">nbdev</a> with <code>pip install nbdev</code>.</li>
+<li>Install <a href="https://quarto.org/docs/get-started/">Quarto</a>.</li>
+<li>Install the <a href="https://github.com/quarto-dev/quarto/tree/main/apps/jupyterlab">Quarto JupyterLab extension</a>.</li>
+</ul></li>
+<li><a href="https://nbdev.fast.ai/tutorials/tutorial.html#first-steps">Setup your nbdev project</a>
+<ul>
+<li>Create an empty GitHub repo</li>
+<li>Enable GitHub Pages</li>
+<li>Initialise your repo with <a href="https://nbdev.fast.ai/api/cli.html#nbdev_new"><code>nbdev_new</code></a></li>
+<li>Check out your workflows
+<ul>
+<li><strong>CI</strong> – The CI (continuous integration) workflow streamlines your developer workflow, particularly with multiple collaborators</li>
+<li><strong>Deploy to GitHub Pages</strong> – Builds your docs with Quarto and deploys it to GitHub Pages</li>
+</ul></li>
+<li>Check out your docs</li>
+</ul></li>
+<li><a href="https://nbdev.fast.ai/tutorials/tutorial.html#make-your-first-edit">Make your first edit</a>
+<ul>
+<li>Install <a href="https://nbdev.fast.ai/tutorials/git_friendly_jupyter.html">hooks</a> for git-friendly notebooks</li>
+<li>Build your library</li>
+<li>Install your package</li>
+<li>Preview your docs</li>
+<li>Edit <code>00_core.ipynb</code> – adding your own package’s code
+<ul>
+<li><code>#| default_exp</code> directive (<a href="https://nbdev.fast.ai/explanations/directives.html#default_exp-name">docs</a>)</li>
+<li>Add your own frontmatter (nbdev vs Quarto frontmatter formats) (<a href="https://nbdev.fast.ai/api/frontmatter.html">docs</a>)</li>
+<li>Add your own function using the <code>#| export</code> directive (<a href="https://nbdev.fast.ai/explanations/directives.html#export">docs</a>)</li>
+<li>Add your own examples, tests, and docs using <code>assert</code> and <code>fastcore.test</code> (<a href="https://fastcore.fast.ai/test.html">docs</a>)</li>
+</ul></li>
+<li>Prepare your changes with <code>nbdev_prepare</code>, a shortcut for:
+<ul>
+<li><code>nbdev_export</code>: Export <code>.py</code> modules from <code>.ipynb</code> notebooks</li>
+<li><code>nbdev_test</code>: Test notebooks</li>
+<li><code>nbdev_clean</code>: Clean notebooks</li>
+<li><code>nbdev_readme</code>: Update <code>README.md</code></li>
+</ul></li>
+<li>Edit <code>index.ipynb</code> – your home page</li>
+<li>Push to GitHub</li>
+<li>Check the updated repo and docs</li>
+</ul></li>
+<li>Advanced functionality
+<ul>
+<li>Doclinks: referencing related symbols (<a href="https://nbdev.fast.ai/tutorials/best_practices.html#reference-related-symbols-with-doclinks">docs</a>)</li>
+<li>Docments: documenting callable parameters (<a href="https://nbdev.fast.ai/tutorials/best_practices.html#document-parameters-with-docments">docs</a>)</li>
+<li>Documenting error-cases as tests (<a href="https://nbdev.fast.ai/tutorials/best_practices.html#document-error-cases-as-tests">docs</a>)</li>
+<li><code>@patch</code>: Define classes across multiple cells (<a href="https://nbdev.fast.ai/tutorials/best_practices.html#document-class-methods-with-show_doc-or-fastcore.basics.patch">docs</a>)</li>
+<li><code>show_doc</code>: Document external objects (<a href="https://nbdev.fast.ai/tutorials/best_practices.html#document-class-methods-with-show_doc-or-fastcore.basics.patch">docs</a>)</li>
+<li>Putting it all together: nbdev vs classical Python development (<a href="https://nbdev.fast.ai/tutorials/best_practices.html#putting-it-all-together-an-annotated-example">docs</a>)</li>
+</ul></li>
+</ul>
+<section id="awesome-nbdev-projects" class="level3">
+<h3 class="anchored" data-anchor-id="awesome-nbdev-projects">Awesome nbdev projects</h3>
+<section id="by-fast.ai" class="level4">
+<h4 class="anchored" data-anchor-id="by-fast.ai">By fast.ai</h4>
+<ul>
+<li><a href="https://github.com/fastai/nbdev">nbdev</a>: The nbdev software development framework is itself an nbdev project</li>
+<li><a href="https://fastai.github.io/execnb/">execnb</a>: Fast and lightweight Jupyter notebook execution engine</li>
+<li><a href="http://docs.fast.ai/">fastai</a>: Simplify training fast and accurate neural nets using modern best practices</li>
+<li><a href="https://fastcore.fast.ai/">fastcore</a>: Python goodies to make your coding faster, easier, and more maintainable</li>
+<li><a href="https://ghapi.fast.ai/">ghapi</a>: A delightful and complete interface to GitHub’s amazing API</li>
+<li><a href="https://fastai.github.io/ghtop-demo/">ghtop</a>: A real-time terminal user interface (TUI) for GitHub</li>
+</ul>
+</section>
+<section id="by-the-community" class="level4">
+<h4 class="anchored" data-anchor-id="by-the-community">By the community</h4>
+<ul>
+<li><a href="https://mannlabs.github.io/alphapept/">AlphaPept</a>: A modular Python-based framework for mass spectrometry</li>
+<li><a href="https://fastkafka.airt.ai/">FastKafka</a>: Build asynchronous web services that interact with Kafka topics</li>
+<li><a href="https://xrsrke.github.io/instructGOOSE/">InstructGOOSE</a>: Implementation of Reinforcement Learning from Human Feedback (RLHF) from the InstructGPT paper</li>
+<li><a href="https://nbdev-mkdocs.airt.ai/">nbdev-mkdocs</a>: Extend nbdev to generate docs using Material for Mkdocs</li>
+<li><a href="https://github.com/muellerzr/nbdev-extensions">nbdev-extensions</a>: A collection of nbdev extensions</li>
+<li><a href="https://hugetim.github.io/nbstata/">nbstata</a>: A Jupyter kernel for Stata built on pystata</li>
+<li><a href="https://ddobrinskiy.github.io/streamlit-jupyter/readme.html">streamlit-jupyter</a>: Preview and develop streamlit applications in Jupyter notebooks</li>
+<li><a href="https://fredguth.github.io/sveltish/">sveltish</a>: Svelte Stores in Python</li>
+<li><a href="https://www.tanishq.ai/UPIT/">UPIT</a>: Unpaired image-to-image translation using fastai/PyTorch</li>
+</ul>
+</section>
+</section>
 </section>
 <section id="additional-reading" class="level2">
 <h2 class="anchored" data-anchor-id="additional-reading">Additional Reading</h2>

@@ -9,49 +9,49 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "nbdev Tutorial",
+    "title": "Nbdev Tutorial",
     "section": "",
-    "text": "The slides for this talk.\nThe GitHub repo with all of the examples and the source code for this site."
+    "text": "Nbdev is an exciting literate and exploratory programming framework. With nbdev, you write your tests, documentation and software in one context: a Jupyter Notebook. Nbdev leverages Quarto to render documentation sites giving you additional power to customize your documentation.\nIn this tutorial, we will walk you through how to use nbdev from the ground up, and provide an overview of some of the underlying technologies such as Quarto and execnb."
   },
   {
     "objectID": "index.html#resources-for-this-tutorial",
     "href": "index.html#resources-for-this-tutorial",
-    "title": "nbdev Tutorial",
-    "section": "",
-    "text": "The slides for this talk.\nThe GitHub repo with all of the examples and the source code for this site."
+    "title": "Nbdev Tutorial",
+    "section": "Resources For This Tutorial",
+    "text": "Resources For This Tutorial\n\nThe slides for this talk.\nThe GitHub repo with all of the examples and the source code for this site."
   },
   {
     "objectID": "index.html#optional-pre-requisites",
     "href": "index.html#optional-pre-requisites",
-    "title": "nbdev Tutorial",
+    "title": "Nbdev Tutorial",
     "section": "Optional Pre-requisites",
-    "text": "Optional Pre-requisites\nOptional because it’s best to watch and try this yourself at home.\n\nInstall Quarto.\nInstall JupyterLab with pip install jupyterlab.\nInstall nbdev with pip install nbdev.\nInstall the nbdev VSCode extension 1.\nOptionally, install the github cli."
+    "text": "Optional Pre-requisites\nOptional because it’s best to watch and try this yourself at home.\n\nInstall Quarto.\nInstall JupyterLab with pip install jupyterlab.\nInstall nbdev with pip install nbdev.\nInstall VSCode by following the official docs.\nInstall the nbdev VSCode extension 1.\nInstall the Quarto JupyterLab extension.\nOptionally, install the github cli."
   },
   {
     "objectID": "index.html#intro-20-minutes",
     "href": "index.html#intro-20-minutes",
-    "title": "nbdev Tutorial",
+    "title": "Nbdev Tutorial",
     "section": "1. Intro (20 minutes)",
     "text": "1. Intro (20 minutes)\nMotivation for nbdev – literate & exploratory programming (slides)."
   },
   {
     "objectID": "index.html#quarto-walkthrough-40-minutes",
     "href": "index.html#quarto-walkthrough-40-minutes",
-    "title": "nbdev Tutorial",
+    "title": "Nbdev Tutorial",
     "section": "2. Quarto Walkthrough (40 minutes)",
     "text": "2. Quarto Walkthrough (40 minutes)\n\nCreate a new project using quarto project create, see the _quarto.yml file.\nbasics.ipynb\n\nNo execution by default\n\ncell-options.qmd\n\nThe qmd format is interesting and mirrors the experience of RStudio to a large extent\nRunning cells:\n\nCMD + SHIFT + Enter\nJupyter cache (pip install Jupyter Cache)\n\nChange value in cell (execution by default vs. notebooks not executing by default)\nQuarto: Assist Panel, show how it works (only in .qmd now)\nCustomizing output\n\nCode cell options:\n\necho: true|false|fenced\ninclude: false\noutput: true|false|asis\n\nFront matter\n\ncode-fold: true\ncode-tools: true\n\nOther important cell options\nGeneral HTML options\n\nHotkeys:\n\nCMD + SHIFT + O; outline navigator\nCMD  + T; see tags (project wide)\n\n\nOther VSCode extension features\n\nOptions\nVisual mode\n\nEditor Toolbar: makes authoring tables so much nicer than plain markdown!\n\n\nDifferent formats\n\nmsword.ipynb\npresentation.ipynb\npdf.ipynb\n\nSome of my favorite features\n\nannotation.qmd\n\nYou can make multi-line by commenting twice\n\nConditional formatting\n\nShow locally in VSCode: nbdev/nbs/getting_started.ipynb.\nNotice special cell tags that let you know when something is visible\n\nTesting your docs by executing code:\n\nSet execute: enabled: true in _quarto.yml or pass the—execute flag to quarto\nUse the execution: freeze: true if you need to opt a notebook out of execution. reference.\nThe Jupyter cache can be helpful while developing: reference.\n\nExternal listings example | docs.\nNotes/TILs:\n\nHamel’s notes | Wasim’s TILs\n\nNotebook filters:\n\nexample | docs\n\n\nPublishing & Previewing\n\nquarto publish\nquarto render followed by netlify\nOfficial Quarto GitHub Actions.\n\nexample\n\n\nConfiguration: _quarto.yml, front matter etc\n\nGlobal options: _quarto.yml: docs\nPage front matter: docs\nOverriding global options per directory: docs\nRepeatable options: listing_meta and merging that with metadata-files front matter\n\nWhere to get help:\n\nThe quarto website repo.\nExample gallery."
   },
   {
     "objectID": "index.html#nbdev-walkthrough-60-minutes",
     "href": "index.html#nbdev-walkthrough-60-minutes",
-    "title": "nbdev Tutorial",
+    "title": "Nbdev Tutorial",
     "section": "3. nbdev Walkthrough (60 minutes)",
-    "text": "3. nbdev Walkthrough (60 minutes)"
+    "text": "3. nbdev Walkthrough (60 minutes)\nThis walkthrough is largely based on the official end-to-end walkthrough and notebook best practices guide.\n\nInstallation\n\nInstall JupyterLab with pip install jupyterlab.\nInstall nbdev with pip install nbdev.\nInstall Quarto.\nInstall the Quarto JupyterLab extension.\n\nSetup your nbdev project\n\nCreate an empty GitHub repo\nEnable GitHub Pages\nInitialise your repo with nbdev_new\nCheck out your workflows\n\nCI – The CI (continuous integration) workflow streamlines your developer workflow, particularly with multiple collaborators\nDeploy to GitHub Pages – Builds your docs with Quarto and deploys it to GitHub Pages\n\nCheck out your docs\n\nMake your first edit\n\nInstall hooks for git-friendly notebooks\nBuild your library\nInstall your package\nPreview your docs\nEdit 00_core.ipynb – adding your own package’s code\n\n#| default_exp directive (docs)\nAdd your own frontmatter (nbdev vs Quarto frontmatter formats) (docs)\nAdd your own function using the #| export directive (docs)\nAdd your own examples, tests, and docs using assert and fastcore.test (docs)\n\nPrepare your changes with nbdev_prepare, a shortcut for:\n\nnbdev_export: Export .py modules from .ipynb notebooks\nnbdev_test: Test notebooks\nnbdev_clean: Clean notebooks\nnbdev_readme: Update README.md\n\nEdit index.ipynb – your home page\nPush to GitHub\nCheck the updated repo and docs\n\nAdvanced functionality\n\nDoclinks: referencing related symbols (docs)\nDocments: documenting callable parameters (docs)\nDocumenting error-cases as tests (docs)\n@patch: Define classes across multiple cells (docs)\nshow_doc: Document external objects (docs)\nPutting it all together: nbdev vs classical Python development (docs)\n\n\n\nAwesome nbdev projects\n\nBy fast.ai\n\nnbdev: The nbdev software development framework is itself an nbdev project\nexecnb: Fast and lightweight Jupyter notebook execution engine\nfastai: Simplify training fast and accurate neural nets using modern best practices\nfastcore: Python goodies to make your coding faster, easier, and more maintainable\nghapi: A delightful and complete interface to GitHub’s amazing API\nghtop: A real-time terminal user interface (TUI) for GitHub\n\n\n\nBy the community\n\nAlphaPept: A modular Python-based framework for mass spectrometry\nFastKafka: Build asynchronous web services that interact with Kafka topics\nInstructGOOSE: Implementation of Reinforcement Learning from Human Feedback (RLHF) from the InstructGPT paper\nnbdev-mkdocs: Extend nbdev to generate docs using Material for Mkdocs\nnbdev-extensions: A collection of nbdev extensions\nnbstata: A Jupyter kernel for Stata built on pystata\nstreamlit-jupyter: Preview and develop streamlit applications in Jupyter notebooks\nsveltish: Svelte Stores in Python\nUPIT: Unpaired image-to-image translation using fastai/PyTorch"
   },
   {
     "objectID": "index.html#additional-reading",
     "href": "index.html#additional-reading",
-    "title": "nbdev Tutorial",
+    "title": "Nbdev Tutorial",
     "section": "Additional Reading",
     "text": "Additional Reading\n\nnbdev docs\nQuarto docs\nAbout the instructors."
   },
@@ -60,6 +60,27 @@
     "href": "about.html",
     "title": "Instructors",
     "section": "",
-    "text": "JJ Allaire\n\n\n\n\n\n\n\nWasim Lorgat\n\n\n\n\n\n\n\nHamel Husain"
+    "text": "J.J. is the founder of Posit and the creator of the RStudio IDE. J.J. is an author of several packages in the R Markdown publishing ecosystem including rmarkdown, flexdashboard, learnr, and distill, and also worked extensively on the R interfaces to Python and TensorFlow. J.J. is now leading the Quarto project, which is a new Jupyter-based scientific and technical publishing system.\nJ.J. is also appearing in another JupyterCon 2023 talk: Jupyter Notebooks + Quarto for customizable and reproducible documents, websites and books."
+  },
+  {
+    "objectID": "about.html#j.j.-allaire",
+    "href": "about.html#j.j.-allaire",
+    "title": "Instructors",
+    "section": "",
+    "text": "J.J. is the founder of Posit and the creator of the RStudio IDE. J.J. is an author of several packages in the R Markdown publishing ecosystem including rmarkdown, flexdashboard, learnr, and distill, and also worked extensively on the R interfaces to Python and TensorFlow. J.J. is now leading the Quarto project, which is a new Jupyter-based scientific and technical publishing system.\nJ.J. is also appearing in another JupyterCon 2023 talk: Jupyter Notebooks + Quarto for customizable and reproducible documents, websites and books."
+  },
+  {
+    "objectID": "about.html#wasim-lorgat",
+    "href": "about.html#wasim-lorgat",
+    "title": "Instructors",
+    "section": "Wasim Lorgat",
+    "text": "Wasim Lorgat\n\n\n\n\n\nWasim is a software engineer, data scientist, and core developer of nbdev. Wasimkhas held technical leadership positions in South African startups. At DataProphet, he led the development of machine learning techniques for reducing defects in manufacturing plants. And at Aerobotics, he led the team that built aerial drone computer vision systems to provide farmers with high-resolution crop data.\nYou can find out more about Wasim on his website."
+  },
+  {
+    "objectID": "about.html#hamel-husain",
+    "href": "about.html#hamel-husain",
+    "title": "Instructors",
+    "section": "Hamel Husain",
+    "text": "Hamel Husain\n\n\n\n\n\nHamel is a core developer of nbdev and key community member of fast.ai. Hamel has built ML infrastructure and deployed data products at Airbnb, GitHub, and DataRobot. Hamel also contributes to many open-source projects related to machine learning infrastructure and developer tools.\nYou can find more about Hamel on his website."
   }
 ]
