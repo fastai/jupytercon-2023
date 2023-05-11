@@ -98,7 +98,7 @@ Motivation for nbdev -- literate & exploratory programming ([slides](https://doc
 
 This walkthrough is largely based on the official [end-to-end walkthrough](https://nbdev.fast.ai/tutorials/tutorial.html) and [notebook best practices guide](https://nbdev.fast.ai/tutorials/best_practices.html).
 
--   [Installation](https://nbdev.fast.ai/tutorials/tutorial.html#installation)
+-   [Installation](https://nbdev.fast.ai/tutorials/tutorial.html#installation): `pip install jupyterlab jupyterlab-quarto nbdev`.
     -   Install [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) with `pip install jupyterlab`.
     -   Install [nbdev](https://nbdev.fast.ai/) with `pip install nbdev`.
     -   Install [Quarto](https://quarto.org/docs/get-started/).
@@ -137,6 +137,11 @@ This walkthrough is largely based on the official [end-to-end walkthrough](https
     -   `show_doc`: Document external objects ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#document-class-methods-with-show_doc-or-fastcore.basics.patch))
     -   Putting it all together: nbdev vs classical Python development ([docs](https://nbdev.fast.ai/tutorials/best_practices.html#putting-it-all-together-an-annotated-example))
 
+```python
+suits = ["♣️","♦️","❤️","♠️"]
+ranks = [None, "A"] + [str(x) for x in range(2,11)]  + ["J", "Q", "K"]
+```
+
 ### Awesome nbdev projects
 
 #### By fast.ai
@@ -156,6 +161,7 @@ This walkthrough is largely based on the official [end-to-end walkthrough](https
 -   [nbdev-mkdocs](https://nbdev-mkdocs.airt.ai/): Extend nbdev to generate docs using Material for Mkdocs
 -   [nbdev-extensions](https://github.com/muellerzr/nbdev-extensions): A collection of nbdev extensions
 -   [nbstata](https://hugetim.github.io/nbstata/): A Jupyter kernel for Stata built on pystata
+-   [Poniard](https://rxavier.github.io/poniard): A scikit-learn companion that streamlines the process of fitting and comparing machine learning models.
 -   [streamlit-jupyter](https://ddobrinskiy.github.io/streamlit-jupyter/readme.html): Preview and develop streamlit applications in Jupyter notebooks
 -   [sveltish](https://fredguth.github.io/sveltish/): Svelte Stores in Python
 -   [UPIT](https://www.tanishq.ai/UPIT/): Unpaired image-to-image translation using fastai/PyTorch
