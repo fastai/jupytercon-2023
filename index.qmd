@@ -169,5 +169,5 @@ ranks = [None, "A"] + [str(x) for x in range(2,11)]  + ["J", "Q", "K"]
 ## Additional Reading
 
 -   [nbdev docs](https://nbdev.fast.ai/)
--   [Quarto docs](https://quarto.org/docs/)
+-   [Quarto docs](https://quarto.org/)
 -   [About](./about.qmd) the instructors.
