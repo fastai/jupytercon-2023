@@ -16,7 +16,7 @@ J.J. is also appearing in another JupyterCon 2023 talk: [Jupyter Notebooks + Qua
 
 [![](photos/wasim.jpeg){width="150" fig-align="center"}](https://wasimlorgat.com/)
 
-[Wasim](https://wasimlorgat.com/) is a software engineer, data scientist, and core developer of [nbdev](https://nbdev.fast.ai/). Wasimkhas held technical leadership positions in South African startups. At DataProphet, he led the development of machine learning techniques for reducing defects in manufacturing plants. And at Aerobotics, he led the team that built aerial drone computer vision systems to provide farmers with high-resolution crop data.
+[Wasim](https://wasimlorgat.com/) is a software engineer, data scientist, and core developer of [nbdev](https://nbdev.fast.ai/). Wasim has held technical leadership positions in South African startups. At DataProphet, he led the development of machine learning techniques for reducing defects in manufacturing plants. And at Aerobotics, he led the team that built aerial drone computer vision systems to provide farmers with high-resolution crop data.
 
 You can find out more about Wasim on [his website](https://wasimlorgat.com/).
 
